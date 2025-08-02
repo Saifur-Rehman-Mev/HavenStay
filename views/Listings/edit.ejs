@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3> Edit My Listings </h3>
+    <form method="post" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title :</label>
+        <input name="listing[title]" value="<%= listing.title  %>" type="text" class="form-control" required>
+        <div class="invalid-feedback"> Please enter valid Title</div>    
+        </div>
+        <div class="mb-3">
+        <label for="description" class="form-label">Description :</label>
+        <textarea name="listing[description]" class="form-control" required> <%= listing.description  %>  </textarea> 
+       <div class="invalid-feedback"> Please enter valid Description</div>  
+        </div>
+        <div class="mb-3">
+        <label for="image" class="form-label">Image/Url :</label>
+        <input name="listing[image]" value="<%= listing.image  %>"  type="text" class="form-control" required>
+         <div class="invalid-feedback"> Please enter valid Image/URL</div>
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price :</label>
+        <input name="listing[price]" value="<%= listing.price  %>"  type="number" class="form-control" required> 
+        <div class="invalid-feedback"> Please enter valid Price</div>
+        </div>
+        <div class="mb-3 col-md-4">
+        <label for="location" class="form-label">Location :</label>
+        <input name="listing[location]" value="<%= listing.location  %>" type="text" class="form-control" required> 
+         <div class="invalid-feedback"> Please enter Location </div>
+        </div >
+        </div>
+        <div class="mb-3">
+        <label for="country" class="form-label">Country :</label>
+        <input name="listing[country]" value="<%= listing.country  %>" type="text" required> 
+        <div class="invalid-feedback"> Please enter valid County</div>
+        </div> <br>
+        <button class="btn btn-dark">Add </button>
+    </form> 
+</div>
+</div>
